@@ -1,0 +1,261 @@
+/* ==========================================================================
+   Hamza Portfolio — styles
+   Tailwind (CDN) handles layout and spacing. This file holds everything
+   Tailwind cannot do on its own: fonts, gold effects, animation helpers.
+   ========================================================================== */
+
+/* ---------- Fonts ----------
+   Coolvetica is self-hosted: put the font file inside the /fonts folder.
+   Inter Tight is loaded from Google Fonts in index.html. */
+@font-face {
+  font-family: "Coolvetica";
+  src: url("../fonts/coolvetica.woff2") format("woff2"),
+       url("../fonts/coolvetica.ttf") format("truetype"),
+       url("../fonts/coolvetica.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------- Base ---------- */
+html,
+body {
+  background: #0b0805;
+}
+
+body {
+  font-family: "Inter Tight", system-ui, sans-serif;
+  color: #efe6d2;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent; /* no blue flash on mobile taps */
+}
+
+::selection {
+  background: #d6a94a;
+  color: #150f05;
+}
+
+/* Coolvetica has a single weight, so never fake bold */
+.font-display {
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #f4e1ab;
+  outline-offset: 3px;
+}
+
+/* ---------- Gold text (animated shine) ---------- */
+.gold-text {
+  background: linear-gradient(100deg, #8a6a24 0%, #f4e1ab 35%, #d6a94a 60%, #8a6a24 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shine 6s linear infinite;
+}
+
+@keyframes shine {
+  to { background-position: -200% 0; }
+}
+
+/* ---------- Text reveal helpers ---------- */
+.mask {
+  display: block;
+  overflow: hidden;
+}
+
+.mask > span {
+  display: block;
+  will-change: transform;
+}
+
+.letter-wrap {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.letter {
+  display: inline-block;
+  will-change: transform;
+}
+
+.word {
+  opacity: 0.14; /* animated to 1 while scrolling */
+}
+
+/* ---------- Buttons and tags ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1rem 1.9rem;
+  border-radius: 999px;
+  font-weight: 500;
+  will-change: transform;
+}
+
+.btn-gold {
+  background: linear-gradient(110deg, #b98a2c, #f4e1ab 50%, #c79a35);
+  color: #150f05;
+}
+
+.btn-line {
+  border: 1px solid rgba(214, 169, 74, 0.55);
+  color: #f4e1ab;
+}
+
+.tag {
+  border: 1px solid rgba(214, 169, 74, 0.3);
+  border-radius: 999px;
+  padding: 0.3rem 0.9rem;
+  font-size: 0.8rem;
+  color: #d9c9a3;
+}
+
+/* ---------- Hero portrait ---------- */
+.arch {
+  border: 1px solid rgba(214, 169, 74, 0.55);
+  border-radius: 999px 999px 0 0;
+  padding: 12px;
+  overflow: hidden;
+}
+
+.arch > * {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 3 / 4.2;
+  object-fit: cover;
+  border-radius: 999px 999px 0 0;
+}
+
+/* Placeholder shown when an image file is missing */
+.ph {
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 30% 20%, #2c2111, #120d06);
+  color: #d6a94a;
+  font-family: "Coolvetica", "Inter Tight", sans-serif;
+  font-size: 4rem;
+}
+
+/* ---------- Stat rings (Laravel / React) ---------- */
+.ring {
+  pointer-events: none;
+  user-select: none;
+  outline: none;
+}
+
+.ring circle {
+  fill: none;
+  stroke-width: 3;
+  outline: none;
+}
+
+.ring .track {
+  stroke: rgba(214, 169, 74, 0.15);
+}
+
+.ring .progress-arc {
+  stroke: url(#gold-gradient);
+  stroke-linecap: round;
+  stroke-dasharray: 339.3;   /* circle length: 2 * PI * 54 */
+  stroke-dashoffset: 339.3;  /* empty until animated */
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+/* ---------- Project cards ---------- */
+.proj {
+  background: linear-gradient(160deg, #1b140b, #0f0b06);
+  border: 1px solid rgba(214, 169, 74, 0.22);
+  border-radius: 28px;
+  transform-origin: center top;
+}
+
+.imgbox {
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.proj img,
+.proj .ph {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  object-fit: cover;
+  border-radius: 18px;
+  transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.proj:hover img,
+.proj:hover .ph {
+  transform: scale(1.05);
+}
+
+/* ---------- Page chrome: cursor, progress bar, preloader, grain ---------- */
+.cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  width: 14px;
+  height: 14px;
+  margin: -7px 0 0 -7px;
+  border-radius: 50%;
+  background: #d6a94a;
+  color: #150f05;
+  font-size: 0;
+  font-weight: 600;
+  pointer-events: none;
+}
+
+.cursor.is-big {
+  width: 86px;
+  height: 86px;
+  margin: -43px 0 0 -43px;
+  font-size: 0.8rem;
+}
+
+@media (hover: none) {
+  .cursor { display: none; }
+}
+
+.scroll-progress {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 90;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #8a6a24, #f4e1ab);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2rem 3rem;
+  background: #0b0805;
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  opacity: 0.05;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}

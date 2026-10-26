@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hamza — Laravel & React Developer</title>
+<meta name="description" content="Hamza is a Laravel and React developer building school systems, business software and websites.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script src="js/tailwind-config.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><linearGradient id="gold-gradient"><stop offset="0" stop-color="#8a6a24"/><stop offset="1" stop-color="#f4e1ab"/></linearGradient></defs></svg>
+<div id="preloader" class="preloader"><div class="font-display text-[22vw] leading-none gold-text" id="count">0</div><div class="h-px bg-gold/40 mt-4 origin-left" id="preline"></div></div>
+<div class="scroll-progress" id="progress"></div>
+<div class="cursor" id="cursor">View</div>
+<div class="grain"></div>
+
+<header class="fixed top-0 inset-x-0 z-50 flex items-center justify-between px-6 md:px-12 py-5 mix-blend-difference">
+  <a href="#top" class="font-display text-2xl text-pale">Hamza</a>
+  <nav class="hidden md:flex gap-10 text-sm text-pale">
+    <a href="#about">About</a><a href="#work">Work</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
+  </nav>
+  <a href="#contact" class="text-sm text-pale border border-pale/60 rounded-full px-5 py-2">Hire me</a>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="relative min-h-screen px-6 md:px-12 pt-32 pb-16 flex items-center overflow-hidden">
+  <div class="absolute -top-40 -left-40 w-[620px] h-[620px] rounded-full opacity-30 blur-3xl" style="background:radial-gradient(circle,#d6a94a,transparent 65%)"></div>
+  <div class="relative grid md:grid-cols-12 gap-10 items-center w-full max-w-[1500px] mx-auto">
+    <div class="md:col-span-8">
+      <p class="text-mist text-lg md:text-xl mb-4 hero-fade">Hi, I am</p>
+      <h1 class="font-display leading-[.85] gold-text tracking-tight text-[clamp(5rem,17vw,15rem)]" id="name" aria-label="Hamza">Hamza</h1>
+      <p class="mt-10 max-w-lg text-lg text-mist leading-relaxed hero-fade">Laravel and React developer. I build school systems, business software and fast, animated websites. I also run Zaro Invite, where I design and sell digital invitations.</p>
+      <div class="mt-10 flex flex-wrap gap-4 hero-fade">
+        <a href="#work" class="btn btn-gold mag">See my work</a>
+        <a href="#contact" class="btn btn-line mag">Start a project</a>
+      </div>
+    </div>
+    <div class="md:col-span-4 flex justify-center md:justify-end hero-fade">
+      <div class="relative w-[min(70vw,330px)]" id="heroimg">
+        <div class="arch"><img src="images/profile.jpg" alt="Portrait of Hamza" data-fallback="H"></div>
+        <svg viewBox="0 0 200 200" class="absolute -left-14 -bottom-12 w-32 h-32 md:w-40 md:h-40" id="badge" aria-hidden="true">
+          <defs><path id="c" d="M100,100 m-72,0 a72,72 0 1,1 144,0 a72,72 0 1,1 -144,0"/></defs>
+          <text fill="#f4e1ab" font-size="17" letter-spacing="3.2" font-family="Inter Tight"><textPath href="#c">LARAVEL • REACT • GSAP • TAILWIND •</textPath></text>
+          <circle cx="100" cy="100" r="6" fill="#d6a94a"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<section class="py-8 border-y border-gold/20 overflow-hidden bg-coal/60">
+  <div class="flex w-max font-display text-5xl md:text-7xl whitespace-nowrap" id="marquee">
+    <div class="flex gap-12 pr-12 marquee-group"><span>Laravel</span><span class="gold-text">React</span><span>MySQL</span><span class="gold-text">GSAP</span><span>Tailwind</span><span class="gold-text">REST APIs</span></div>
+    <div class="flex gap-12 pr-12 marquee-group" aria-hidden="true"><span>Laravel</span><span class="gold-text">React</span><span>MySQL</span><span class="gold-text">GSAP</span><span>Tailwind</span><span class="gold-text">REST APIs</span></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="px-6 md:px-12 py-28 md:py-44">
+  <div class="max-w-6xl mx-auto">
+    <p id="statement" class="font-body font-medium tracking-tight text-[clamp(1.9rem,4.4vw,3.8rem)] leading-[1.15]">I am a developer who cares how software feels. I build the backend in Laravel, the interface in React and Tailwind, and I add motion with GSAP so every page feels alive.</p>
+    <div class="mt-24 grid sm:grid-cols-3 gap-10 items-center">
+      <div class="flex items-center gap-6 reveal">
+        <svg viewBox="0 0 120 120" class="ring w-28 h-28 shrink-0" aria-hidden="true" focusable="false"><circle class="track" cx="60" cy="60" r="54"/><circle class="progress-arc" data-progress=".8" cx="60" cy="60" r="54"/></svg>
+        <div><div class="font-display text-5xl gold-text"><span class="count-up" data-target="80">0</span>%</div><div class="text-mist">Laravel</div></div>
+      </div>
+      <div class="flex items-center gap-6 reveal">
+        <svg viewBox="0 0 120 120" class="ring w-28 h-28 shrink-0" aria-hidden="true" focusable="false"><circle class="track" cx="60" cy="60" r="54"/><circle class="progress-arc" data-progress=".5" cx="60" cy="60" r="54"/></svg>
+        <div><div class="font-display text-5xl gold-text"><span class="count-up" data-target="50">0</span>%</div><div class="text-mist">React</div></div>
+      </div>
+      <div class="reveal"><div class="font-display text-5xl gold-text"><span class="count-up" data-target="2">0</span> years</div><div class="text-mist">Professional experience</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK: stacked sticky cards -->
+<section id="work" class="px-4 md:px-12 pb-32">
+  <h2 class="font-display text-6xl md:text-9xl max-w-[1500px] mx-auto mb-16 reveal">Selected <span class="gold-text">work</span></h2>
+  <div class="max-w-[1500px] mx-auto space-y-8" id="stack">
+    <article class="proj md:sticky p-6 md:p-10 grid md:grid-cols-2 gap-8 items-center md:min-h-[70vh]" style="top:9vh" data-view>
+      <div><div class="flex flex-wrap gap-2 mb-6"><span class="tag">Laravel</span><span class="tag">MySQL</span><span class="tag">Admin panel</span></div>
+        <h3 class="font-display text-4xl md:text-6xl leading-tight">School Management System</h3>
+        <p class="text-mist text-lg mt-5 leading-relaxed max-w-md">Built during my job. Students, teachers, fees, attendance and results in one system used by a school every day.</p></div>
+      <div class="imgbox h-full"><img src="images/school-system.jpg" alt="School management system" data-fallback="School"></div>
+    </article>
+    <article class="proj md:sticky p-6 md:p-10 grid md:grid-cols-2 gap-8 items-center md:min-h-[70vh]" style="top:12vh" data-view>
+      <div><div class="flex flex-wrap gap-2 mb-6"><span class="tag">HTML</span><span class="tag">Tailwind</span><span class="tag">GSAP</span></div>
+        <h3 class="font-display text-4xl md:text-6xl leading-tight">webrahim.com</h3>
+        <p class="text-mist text-lg mt-5 leading-relaxed max-w-md">A fast, animated website with scroll effects, tuned for speed.</p>
+        <a href="https://webrahim.com/" target="_blank" rel="noopener" class="btn btn-line mt-8 mag">Visit website</a></div>
+      <div class="imgbox h-full"><img src="images/webrahim.jpg" alt="webrahim.com" data-fallback="webrahim"></div>
+    </article>
+    <article class="proj md:sticky p-6 md:p-10 grid md:grid-cols-2 gap-8 items-center md:min-h-[70vh]" style="top:15vh" data-view>
+      <div><div class="flex flex-wrap gap-2 mb-6"><span class="tag">Website</span><span class="tag">UK client</span><span class="tag">Live</span></div>
+        <h3 class="font-display text-4xl md:text-6xl leading-tight">podcutz.co.uk</h3>
+        <p class="text-mist text-lg mt-5 leading-relaxed max-w-md">A live website built and launched for a client in the UK.</p>
+        <a href="https://podcutz.co.uk/" target="_blank" rel="noopener" class="btn btn-line mt-8 mag">Visit website</a></div>
+      <div class="imgbox h-full"><img src="images/podcutz.jpg" alt="podcutz.co.uk" data-fallback="Podcutz"></div>
+    </article>
+    <article class="proj md:sticky p-6 md:p-10 grid md:grid-cols-2 gap-8 items-center md:min-h-[70vh]" style="top:18vh" data-view>
+      <div><div class="flex flex-wrap gap-2 mb-6"><span class="tag">My brand</span><span class="tag">Digital invitations</span><span class="tag">Instagram</span></div>
+        <h3 class="font-display text-4xl md:text-6xl leading-tight">Zaro Invite</h3>
+        <p class="text-mist text-lg mt-5 leading-relaxed max-w-md">My own brand. I design digital invitations and sell them through Instagram.</p>
+        <a href="https://www.instagram.com/zaroinvite" target="_blank" rel="noopener" class="btn btn-line mt-8 mag">Follow @zaroinvite</a></div>
+      <div class="imgbox h-full"><img src="images/zaroinvite.jpg" alt="Zaro Invite Instagram page" data-fallback="Zaro Invite"></div>
+    </article>
+    <article class="proj md:sticky p-6 md:p-10 grid md:grid-cols-2 gap-8 items-center md:min-h-[70vh]" style="top:21vh" data-view>
+      <div><div class="flex flex-wrap gap-2 mb-6"><span class="tag">Digital invitation</span><span class="tag">Live</span></div>
+        <h3 class="font-display text-4xl md:text-6xl leading-tight">Live invitation</h3>
+        <p class="text-mist text-lg mt-5 leading-relaxed max-w-md">A real digital invitation I built and published. This is the kind of product Zaro Invite delivers to clients.</p>
+        <a href="https://manrahi.netlify.app/" target="_blank" rel="noopener" class="btn btn-line mt-8 mag">Open invitation</a></div>
+      <div class="imgbox h-full"><img src="images/manrahi.jpg" alt="Live digital invitation" data-fallback="Invitation"></div>
+    </article>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="px-6 md:px-12 py-24 md:py-36 border-t border-gold/15">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="font-display text-6xl md:text-9xl mb-16 reveal">Experience</h2>
+    <div class="relative pl-10 border-l border-gold/25" id="timeline">
+      <div class="absolute -left-px top-0 w-px h-full origin-top bg-gold" id="timeline-line" style="transform:scaleY(0)"></div>
+      <div class="relative pb-14 reveal"><span class="absolute -left-[46px] top-3 w-3 h-3 rounded-full bg-gold"></span>
+        <h3 class="font-display text-3xl md:text-4xl">Laravel Developer</h3><p class="text-gold mt-1">2 years, full-time</p>
+        <p class="text-mist mt-4 leading-relaxed max-w-xl">Built a school management system and other business software. Database design, backend logic and admin interfaces.</p></div>
+      <div class="relative pb-14 reveal"><span class="absolute -left-[46px] top-3 w-3 h-3 rounded-full bg-gold"></span>
+        <h3 class="font-display text-3xl md:text-4xl">Website projects</h3><p class="text-gold mt-1">Alongside my job</p>
+        <p class="text-mist mt-4 leading-relaxed max-w-xl">Designed, built and launched webrahim.com and podcutz.co.uk.</p></div>
+      <div class="relative reveal"><span class="absolute -left-[46px] top-3 w-3 h-3 rounded-full bg-gold"></span>
+        <h3 class="font-display text-3xl md:text-4xl">Founder, Zaro Invite</h3><p class="text-gold mt-1">Instagram business</p>
+        <p class="text-mist mt-4 leading-relaxed max-w-xl">Designing and selling digital invitations, from the invitation page itself to delivery to the client.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="px-6 md:px-12 py-28 md:py-48 text-center border-t border-gold/15 overflow-hidden">
+  <h2 class="font-display leading-[.95] text-[clamp(3.5rem,12vw,11rem)]"><span class="mask"><span class="contact-line">Have a project?</span></span><span class="mask"><span class="contact-line gold-text">Let's talk.</span></span></h2>
+  <div class="mt-14 flex flex-wrap justify-center gap-4 reveal">
+    <a href="mailto:hamzabussness24@gmail.com" class="btn btn-gold mag">hamzabussness24@gmail.com</a>
+    <a href="https://wa.me/923123743909" target="_blank" rel="noopener" class="btn btn-line mag">WhatsApp</a>
+    <a href="https://www.instagram.com/zaroinvite" target="_blank" rel="noopener" class="btn btn-line mag">Instagram @zaroinvite</a>
+    <a href="https://www.linkedin.com/in/hamza-sheikh-dev/" target="_blank" rel="noopener" class="btn btn-line mag">LinkedIn</a>
+  </div>
+</section>
+</main>
+<footer class="px-6 md:px-12 py-8 text-center text-sm text-mist/70 border-t border-gold/10">© <span id="year"></span> Hamza. All rights reserved.</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
